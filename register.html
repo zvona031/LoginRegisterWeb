@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Register new account!</h1>
+    <div>
+        <form method="POST" action="register.php">
+            <table>
+                <tr>
+                    <td><label for="userName">Enter username:</label><br>
+                        <input type="text" id="userName" name="userName" placeholder="User name" required><br>
+                        <br></td>
+                    <td><label for="age">Your age:</label><br>
+                        <input type="number" id="age" name="age" placeholder="Age" required><br>
+                        <br></td>
+                </tr>
+                <tr>
+                    <td><label for="password">Enter password:</label><br>
+                        <input type="password" id="password" name="password" placeholder="Password" required onkeyup="check(this)">
+                        <script>
+                            function check(e){
+                            var check=(document.getElementById('repassword').value == e.value);
+                            if (check){ document.getElementById('RegisterSubmit').disabled = false}
+                            if(!check){ document.getElementById('RegisterSubmit').disabled = true}
+                            }
+                            </script><br>
+                        <br></td>
+                    <td><label for="repassword">Re-enter password:</label><br>
+                        <input type="password" id="repassword" name="repassword" placeholder="Re-enter password" required onkeyup="check1(this)">
+                        <script>
+                            function check1(e){
+                            var check=(document.getElementById('password').value == e.value);
+                            if (check){ document.getElementById('RegisterSubmit').disabled = false}
+                            if(!check){ document.getElementById('RegisterSubmit').disabled = true}
+                            }
+                            </script>
+                            <br><br></td>
+                </tr>
+                <tr>
+                    <td><label for="fname">First name:</label><br>
+                        <input type="text" id="firstName" name="firstName" placeholder="First name" required><br>
+                        <br></td>
+                    <td><label for="fname">Last name:</label><br>
+                        <input type="text" id="lastName" name="lastName" placeholder="Last name" required><br>
+                        <br></td>
+                </tr>
+                
+                <tr>
+                    <td><input type="submit" id="RegisterSubmit" value="Register"></td>
+                    <td>Already have account?<a href="login.html"> Login here!</a></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>
